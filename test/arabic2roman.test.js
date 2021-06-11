@@ -1,6 +1,6 @@
 var chai = require("chai");
 var expect = chai.expect;
-let {arabic2roman} = require ("../src/arabic2roman");
+let {arabic2roman} = require ("../src/arabic2roman2");
 // const { trigramGenerator, generateChunks, whitespaceHandler } = require("../src/trigramGenerator");
 
 
@@ -54,37 +54,37 @@ describe('arabic 2 roman', function () {
         expect(arabic2roman(1000)).to.equal("M");
     });
 
-    // it("Should return MMM for 3000", function() {
-    //     expect(arabic2roman(3000)).to.equal("MMM");
-    // });
+    it("Should return MMM for 3000", function() {
+        expect(arabic2roman(3000)).to.equal("MMM");
+    });
 
-    // it("Should return XIII for 13", function() {
-    //     expect(arabic2roman(13)).to.equal("XIII");
-    // });
+    it("Should return XIII for 13", function() {
+        expect(arabic2roman(13)).to.equal("XIII");
+    });
 
-    // it("Should return XXXII for 32", function() {
-    //     expect(arabic2roman(32)).to.equal("XXXII");
-    // });
+    it("Should return XXXII for 32", function() {
+        expect(arabic2roman(32)).to.equal("XXXII");
+    });
 
-    // it("Should return IX for 9", function() {
-    //     expect(arabic2roman(9)).to.equal("IX");
-    // });
+    it("Should return IX for 9", function() {
+        expect(arabic2roman(9)).to.equal("IX");
+    });
 
-    // it("Should return XIV for 14", function() {
-    //     expect(arabic2roman(14)).to.equal("XIV");
-    // });
+    it("Should return XIV for 14", function() {
+        expect(arabic2roman(14)).to.equal("XIV");
+    });
 
-    // it("Should return XIX for 19", function() {
-    //     expect(arabic2roman(19)).to.equal("XIX");
-    // });
+    it("Should return XIX for 19", function() {
+        expect(arabic2roman(19)).to.equal("XIX");
+    });
 
-    // it("Should return XXIV for 24", function() {
-    //     expect(arabic2roman(24)).to.equal("XXIV");
-    // });
+    it("Should return XXIV for 24", function() {
+        expect(arabic2roman(24)).to.equal("XXIV");
+    });
 
-    // it("Should return XL for 40", function() {
-    //     expect(arabic2roman(40)).to.equal("XL");
-    // });
+    it("Should return XL for 40", function() {
+        expect(arabic2roman(40)).to.equal("XL");
+    });
 
 });
 

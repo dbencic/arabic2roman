@@ -9,15 +9,18 @@ let romanNumerals = {0: "", 1: "I", 5: "V",
 function arabic2roman(arabic) {
     let base = getBase(arabic);
     if(base.arabic == arabic) return base.roman;
-    return base.roman + arabic2roman(arabic - base.arabic);//bazni broj + ostatak
-
+    let baseArabic = (arabic >= 4*base.arabic)?4*base.arabic:base.arabic;
+    let baseRoman = (arabic >= 4*base.arabic)?base.roman + base.nextRoman:base.roman;
+    return baseRoman + arabic2roman(arabic - baseArabic);//bazni broj + ostatak
 }
 
 function getBase(arabic) {
     let lowerOrEqualNumber = boundaries.find((val)=>(val <= arabic));
+    let index = boundaries.indexOf(lowerOrEqualNumber);
     return {
         arabic: lowerOrEqualNumber,
-        roman: romanNumerals[lowerOrEqualNumber]
+        roman: romanNumerals[lowerOrEqualNumber],
+        nextRoman: romanNumerals[boundaries[index - 1]]
     };
 }
 
